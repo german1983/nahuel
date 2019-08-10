@@ -12,8 +12,8 @@ window.onload = function () {
  
   game = new Phaser.Game(gameConfig);
   window.focus();
-  resizeGame();
-  window.addEventListener("resize", resizeGame);
+  // resizeGame();
+  // window.addEventListener("resize", resizeGame);
 }
 
 function resizeGame() {

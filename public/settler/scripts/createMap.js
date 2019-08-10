@@ -31,10 +31,18 @@ class createMap extends Phaser.Scene {
     });
 
     // this.createHexes(myMap.Hexes);
+    this.addTextToHexes(myMap.Hexes);
     this.createNodes(myMap.Nodes);
     this.createEdges(myMap.Edges);
    
     console.log("Map is created... Enjoy the game!");
+  }
+
+  addTextToHexes(hexes) {
+    hexes.forEach(hex => {
+      const center = this.myMap.Layout.hexToPixel(hex);
+      hex.text = this.add.bitmapText(center.x, center.y, "font", hex.q + ", " + hex.r);
+    });
   }
 
   createHexagonMap(layout) {
